@@ -14,5 +14,8 @@ mongoose.connect(process.env.MONGODB_URI,
   )
     .then(() => console.log('MongoDB connected'))
     .catch(err => console.log(err));
+    app.get("/", (req, res) => {
+      res.send("Server is live");
+    });
 app.use("/api/user",userRoutes)
 app.listen(5000, console.log( "Server is running on port 5000"));
